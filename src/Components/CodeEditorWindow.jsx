@@ -37,7 +37,8 @@ const CodeEditorWindow = ({ onChange, language, code, theme }) => {
   return (
     <div className="myEditor">
       <Editor
-        height="70vh"
+        
+        height="68vh"
         defaultLanguage="javascript"
         onMount={handleEditorDidMount}
         value={value}
@@ -70,9 +71,9 @@ const CodeEditorWindow = ({ onChange, language, code, theme }) => {
         width:'81%',
         // alignItems: 'flex-end',
         fontSize: '20px',
-        backgroundColor: '#898C83',
+        backgroundColor: 'black',
         minHeight: '150px',
-        color: 'black'
+        color: 'red'
       }}>{output}</pre>
     </div>
   );
