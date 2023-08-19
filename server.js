@@ -2,7 +2,7 @@ import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 const app = express();
-// import ACTIONS from './src/Actions';
+// import { ACTIONS } from './src/Actions';
 // import { JOIN, JOINED } from './src/Actions';
 const server = createServer(app);
 const io = new Server(server);
@@ -25,6 +25,7 @@ io.on('connection',(socket) =>{
         userSocketMap[socket.id] = username;
         socket.join(roomId);
         const clients = getAllConnectedClients(roomId);
+        // console.log(clients);
         clients.forEach(({socketId}) =>{
               io.to(socketId).emit('joined',{
                 clients,
@@ -33,9 +34,26 @@ io.on('connection',(socket) =>{
               });
         });
     });
+
+    // socket.on('sync-code', ({socketId, value})=>{
+    //     io.to(socketId).emit('code-change', {code})
+    // })
+
+    socket.on('disconnecting', () => {
+        const rooms = [...socket.rooms];
+        rooms.forEach((roomId) =>{
+             socket.in(roomId).emit('disconnected', {
+                socketId: socket.id,
+                username: userSocketMap[socket.id],
+             });
+        });
+    delete userSocketMap[socket.id];
+    socket.leave();
+
+    });
 });
 
-const PORT = process.env.PORT || 5075;
+const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 

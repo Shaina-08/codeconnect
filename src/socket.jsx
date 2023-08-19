@@ -14,11 +14,14 @@ export const initSocket = async () => {
       reject(new Error('WebSocket connection timed out'));
     }, options.timeout);
 
-    const socket = io(import.meta.env.REACT_APP_BACKEND_URL, options);
+    // Replace the REACT_APP_BACKEND_URL with your desired URL
+    const socket = io('http://localhost:5000', options);
+
     socket.on('connect', () => {
       clearTimeout(timeoutId);
       resolve(socket);
     });
+
     socket.on('connect_error', (error) => {
       clearTimeout(timeoutId);
       reject(error);

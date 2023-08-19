@@ -47,22 +47,55 @@ const EditorPages = () => {
               toast.success(`${username} joined the room. `);
               console.log(`${username} joined`);
              }
-          
-          setClients(clients);
-          socketRef.current.emit(ACTIONS.SYNC_CODE, {
-            code: codeRef.current,
-            socketId,
-        });
+             
+             setClients(clients);
+             socketRef.current.emit(ACTIONS.SYNC_CODE, {
+
+               value : codeRef.current, socketId,
+              }
+               
+           );
+
+          socketRef.current.on('disconnected',({socketId, username}) =>{
+                toast.success(`${username} left the room`);
+                setClients((prev) =>{
+                  return prev.filter
+                  (client => client.socketId !== socketId)
+                })
+          })
 
          });
 
        };
        init();
+
+       return () => {
+        socketRef.current.disconnect();
+        socketRef.current.off('join');
+        socketRef.current.off('joined');
+        
+
+       }
   }, []);
 
+  
+  
+  async function copyRoomId() {
+   try {
+     await navigator.clipboard.writeText(roomId)
+     toast.success('Room Id is copied to clipboard')
+   } catch (err) {
+     toast.error('COuld not copy room Id')
+     console.error(err);
+   }
+ }
 
+
+ function leaveRoom(){
+     reactNavigator('/');
+ }
   if(!location.state){
-
+    
     return <Navigate to="/" />
   }
 
@@ -74,11 +107,14 @@ const EditorPages = () => {
         <div className="sideinner">
 
           <div className="logoimage">
+            <img src="/public/icons8-metamask-logo-50.png" alt="" />
           {/* <img src={'/images/veterinary design vet clipart puppy_8947055.png'}  className='logolog' alt="Logo" /> */}
-
-          
+          <h1 className='style'>|</h1>
+        <h1 className='codeget'>Let's Code</h1>
           </div>
-          <h3>CONNECTED PEOPLE</h3>
+          
+          
+          <h3 className="heat">CONNECTED PEOPLE</h3>
 
           <div className="clientsList">
             {
@@ -101,12 +137,15 @@ const EditorPages = () => {
       <div className="editorWrapper">
         <div className="editorContent">
 
-      <CodeEditorWindow/>
+      <CodeEditorWindow socketRef= {socketRef}
+      roomId={roomId}
+      
+      />
         </div>
         <div className="someBtns">
 
-        <button className='btn copyBtn'>Copy ROOM ID</button>
-        <button className='btn leaveBtn'>Leave</button>
+        <button className='btn copyBtn' onClick={copyRoomId}>Copy ROOM ID</button>
+        <button className='btn leaveBtn' onClick={leaveRoom}>Leave</button>
         </div>
 
 
