@@ -107,7 +107,7 @@ const EditorPages = () => {
         <div className="sideinner">
 
           <div className="logoimage">
-            <img  className= "imgs" src="/public/—Pngtree—glitter golden pattern light effect_6414641.png" alt="" />
+            <img  className= "imgs" src="/—Pngtree—glitter golden pattern light effect_6414641.png" alt="" />
           {/* <img src={'/images/veterinary design vet clipart puppy_8947055.png'}  className='logolog' alt="Logo" /> */}
           <h1 className='style'>!</h1>
         <h1 className='codeget'>Let's Code</h1>
