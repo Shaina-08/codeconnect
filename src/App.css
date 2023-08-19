@@ -165,11 +165,12 @@ footer a:hover {
   align-items: center;
   flex-direction: column;
   font-weight: bold;
-  color: rgb(149, 133, 133);
+  color: rgb(191, 162, 98);
   font-size: 20px;
 }
 .userName {
   margin-top: 10px;
+  color: rgb(191, 162, 98);
 }
 
 .editorWrapper {
@@ -186,33 +187,34 @@ footer a:hover {
 }
 .copyBtn {
   font-size: 15px;
-  background-color: rgb(125, 134, 129);
-  height: 30px;
+  background-color: rgb(204, 198, 174);
+  height: 40px;
   border: none;
   width: 250px;
-  border-radius: 2%;
+  border-radius: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   margin-bottom: 30px;
-  margin-right: 1px;
+  /* margin-right: 1px; */
   margin-left: auto;
 }
 
 .leaveBtn {
-  background-color: rgb(25, 98, 60);
-  color: white;
+  background-color: rgb(121, 17, 17);
+  color: rgb(204, 175, 175);
   width: 80px;
-  height: 30px;
-  font-size: 15px;
+  height: 41.3px;
+  font-size: 16px;
   margin-right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
   margin-bottom: 20px;
-  border-radius: 2%;
+  border-radius: 0%;
+  cursor: pointer;
 }
 
 .myEditor {
@@ -224,12 +226,14 @@ footer a:hover {
 
 .heat {
   /* margin-left: 80px; */
-  margin-top: 20px;
+  margin-top: 105px;
   margin-bottom: 50px;
-  color: rgb(27, 27, 21);
+  color: #ccb782;
   font-family: cursive;
-  font-size: 27px;
+  font-size: 26px;
+  font-weight: 500;
   /* position: absolute; */
+  /* margin-left: ; */
 }
 .logoimage {
   background-color: rgb(33, 86, 56);
@@ -240,26 +244,36 @@ footer a:hover {
   /* margin-left: ; */
   /* width: 100%; */
   width: 340px;
+
   height: 80px;
   margin-top: 5px;
   /* border-radius: 50%; */
 }
+.imgs {
+  width: 380px;
+  height: 340px;
+  margin-top: -80px;
+  /* z-index: 100; */
+  /* position: relative; */
+}
+
 .style {
   position: relative;
-  margin-top: -79px;
-  font-size: 70px;
+  margin-top: -269px;
+  font-size: 55px;
   font-weight: 200;
-  margin-left: 70px;
-  color: #a69052;
+  margin-left: 20px;
+  color: #ccb782;
 }
 
 .codeget {
   position: relative;
-  margin-top: -120px;
-  font-size: 37px;
+  margin-top: -102px;
+  font-size: 34px;
   font-weight: 400;
-  margin-left: 120px;
-  color: #a69052;
-  /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
-  font-family: sans-serif;
+  margin-left: 50px;
+  color: #ccb782;
+  /* font-family: "Arial Narrow", Arial, sans-serif; */
+  /* font-family: sans-serif; */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold";
 }

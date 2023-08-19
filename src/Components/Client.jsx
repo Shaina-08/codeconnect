@@ -8,9 +8,9 @@ const Client = ({username}) => {
   
   return (
     <div className="client">
-      <ConfigProvider colors={['brown', '#4A3729', '#3C280D']}>
+      <ConfigProvider colors={['#791111',  '#ccb782']}>
 
-    <Avatar  name={username} size={70}  round="40%" />
+    <Avatar  name={username} size={60}  round="35%" />
       </ConfigProvider>
       
      

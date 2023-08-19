@@ -107,14 +107,14 @@ const EditorPages = () => {
         <div className="sideinner">
 
           <div className="logoimage">
-            <img src="/public/icons8-metamask-logo-50.png" alt="" />
+            <img  className= "imgs" src="/public/—Pngtree—glitter golden pattern light effect_6414641.png" alt="" />
           {/* <img src={'/images/veterinary design vet clipart puppy_8947055.png'}  className='logolog' alt="Logo" /> */}
-          <h1 className='style'>|</h1>
+          <h1 className='style'>!</h1>
         <h1 className='codeget'>Let's Code</h1>
           </div>
           
           
-          <h3 className="heat">CONNECTED PEOPLE</h3>
+          <h3 className="heat">ScriptSquad</h3>
 
           <div className="clientsList">
             {
@@ -131,6 +131,11 @@ const EditorPages = () => {
 
           </div>
         </div>
+        <div className="someBtns">
+
+        <button className='btn copyBtn' onClick={copyRoomId}>Copy ROOM ID</button>
+        <button className='btn leaveBtn' onClick={leaveRoom}>Leave</button>
+        </div>
         
       </div>
 
@@ -141,11 +146,6 @@ const EditorPages = () => {
       roomId={roomId}
       
       />
-        </div>
-        <div className="someBtns">
-
-        <button className='btn copyBtn' onClick={copyRoomId}>Copy ROOM ID</button>
-        <button className='btn leaveBtn' onClick={leaveRoom}>Leave</button>
         </div>
 
 

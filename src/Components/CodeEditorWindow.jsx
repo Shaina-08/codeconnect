@@ -136,25 +136,25 @@ const CodeEditorWindow = ({ onChange, language, code, theme , onCodeChange}) => 
       />
       <button onClick={runCode} style={{
         marginTop: '7px',
-        border: '1px solid #ddd',
-        borderRadius: '4px',
-        width:'40px',
+        border: '1px solid #303234',
+        // borderRadius: '4px',
+        width:'60px',
         cursor: 'pointer',
         fontSize: '14px',
-        backgroundColor: '#F3F6EB',
+        backgroundColor: '#302034',
         minHeight: '30px',
-        color: 'black'
+        color: '#ccb782'
       }} >Run</button>
       <pre style={{
         marginTop: '16px',
-        border: '1px solid #ddd',
+        // border: '1px solid #ddd',
         padding: '8px',
         borderRadius: '4px',
-        width:'81%',
+        width:'99%',
         fontSize: '20px',
-        backgroundColor: 'black',
+        backgroundColor: '#CCC6AE',
         minHeight: '150px',
-        color: 'red'
+        color: '#791111'
       }}>{output}</pre>
     </div>
   );
