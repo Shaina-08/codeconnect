@@ -96,7 +96,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme , onCodeChange}) => 
     console.log("editor things:", value);
 
     // const code = instance.getValue();
-    console.log(code);
+    // console.log(code);
   };
 
   
