@@ -40,7 +40,7 @@ const Home = () => {
     <div className="homePagewrapper">
       <div className="formwrapper">
         <div className="someStyle">
-        <img className="homeLogo" src="icons8-metamask-logo-50.png" alt="logo-image" />
+        <img className="homeLogo" src="icons8-metamask-logo-50(copy).png" alt="logo-image" />
         <h1 className='styling'>|</h1>
         <h1 className='code'>Let's Code</h1>
         <h4 className='mainLabel'>Paste invitation ROOM ID</h4>
