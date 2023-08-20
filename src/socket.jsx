@@ -15,7 +15,7 @@ export const initSocket = async () => {
     }, options.timeout);
 
     // Replace the REACT_APP_BACKEND_URL with your desired URL
-    const socket = io('https://localhost:5000', options);
+    const socket = io('http://localhost:5000', options);
 
     socket.on('connect', () => {
       clearTimeout(timeoutId);
