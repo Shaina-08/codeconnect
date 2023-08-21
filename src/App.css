@@ -230,8 +230,9 @@ footer a:hover {
   margin-bottom: 50px;
   color: #ccb782;
   font-family: cursive;
-  font-size: 26px;
+  font-size: 40px;
   font-weight: 500;
+  font-family: "Dancing Script", cursive;
   /* position: absolute; */
   /* margin-left: ; */
 }
